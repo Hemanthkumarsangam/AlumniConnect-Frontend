@@ -1,14 +1,28 @@
-.login{
+.login {
     height: 100vh;
     width: 100vw;
-    background: url(../../assets/headBack.jpg) no-repeat;
     position: fixed;
     background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
 
+/* Apply blur effect to the background image using ::after */
+.login::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url(../../assets/img.jpg) no-repeat center center;
+    background-size: cover;
+    filter: blur(10px); /* Adjust the blur level here */
+    z-index: -1; /* Ensures the blurred background is behind the content */
 }
 
 .login form{
-    padding: 20px;
+    padding: 50px;
 }
 
 .formContainer{
